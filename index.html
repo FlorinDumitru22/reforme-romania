@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harta Reformelor Legislative — România</title>
+<meta name="description" content="25 propuneri legislative concrete pentru reforma statului român. Scrutin public, versiuni, documente descărcabile.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0b0f14;--surface:rgba(255,255,255,0.025);--border:rgba(255,255,255,0.06);--text:#cdd5e0;--text2:#6b7a90;--text3:#4a5568;--accent:#5C7CFA;--red:#EF5350;--green:#66BB6A;--orange:#FFA726;--purple:#AB47BC;--teal:#26A69A}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.container{max-width:1280px;margin:0 auto;padding:0 24px}
+
+/* HEADER */
+.hero{padding:40px 0 32px;border-bottom:1px solid var(--border);background:linear-gradient(170deg,rgba(92,124,250,0.06) 0%,rgba(171,71,188,0.03) 50%,transparent 100%)}
+.hero h1{font-size:32px;font-weight:700;color:#f2f4f7;letter-spacing:-0.02em}
+.hero p{color:var(--text2);margin-top:6px;font-size:15px}
+.hero-meta{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+.hero-meta .badge{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 16px;min-width:110px}
+.hero-meta .badge .n{font-size:28px;font-weight:700;font-family:'JetBrains Mono',monospace}
+.hero-meta .badge .l{font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:0.05em;margin-top:2px}
+
+/* NAV */
+.nav{padding:16px 0;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:rgba(11,15,20,0.95);backdrop-filter:blur(12px)}
+.nav-inner{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pill{padding:6px 14px;border-radius:20px;font-size:13px;font-weight:500;border:1px solid var(--border);background:transparent;color:var(--text2);cursor:pointer;transition:all 0.2s;white-space:nowrap;font-family:inherit}
+.pill:hover,.pill.active{border-color:var(--accent);color:var(--accent);background:rgba(92,124,250,0.1)}
+.pill.active-red{border-color:var(--red);color:var(--red);background:rgba(239,83,80,0.1)}
+.pill.active-purple{border-color:var(--purple);color:var(--purple);background:rgba(171,71,188,0.1)}
+.search-box{width:100%;padding:10px 14px 10px 38px;background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:14px;font-family:inherit;outline:none;margin-bottom:12px}
+.search-box:focus{border-color:rgba(92,124,250,0.4)}
+.search-wrap{position:relative}.search-wrap::before{content:'🔍';position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:15px;opacity:0.4}
+
+/* TABS */
+.tabs{display:flex;gap:0;margin:24px 0 0;border-bottom:2px solid var(--border)}
+.tab{padding:12px 24px;font-size:14px;font-weight:600;color:var(--text2);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.2s}
+.tab:hover{color:var(--text)}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab-content{display:none}.tab-content.active{display:block}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px;padding:20px 0}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px;cursor:pointer;transition:all 0.2s}
+.card:hover{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.1)}
+.card-cat{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px}
+.card h3{font-size:16px;font-weight:600;color:#e8ecf2;margin-bottom:4px}
+.card .sub{font-size:13px;color:var(--text2)}
+.card .tags{margin-top:10px;display:flex;gap:5px;flex-wrap:wrap}
+.card .tag{font-size:10px;padding:2px 8px;border-radius:7px;background:rgba(255,255,255,0.04);color:var(--text2)}
+.badge-sm{font-size:10px;font-weight:600;padding:2px 8px;border-radius:8px;text-transform:uppercase;letter-spacing:0.04em}
+
+/* DETAIL PANEL */
+.detail{margin:20px 0;background:var(--surface);border:1px solid rgba(92,124,250,0.2);border-radius:14px;padding:28px;animation:fadeIn 0.25s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.detail h2{font-size:22px;font-weight:700;color:#f0f2f5;margin:8px 0 4px}
+.detail .boxes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:20px}
+.detail .box{border-radius:11px;padding:16px 18px;border-left:3px solid}
+.detail .box h4{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:7px}
+.detail .box p{font-size:13px;color:#b0b9c8;line-height:1.6}
+.detail .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+.detail .meta h4{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:5px}
+.detail .meta .law-tag{font-size:12px;color:#8a94a6;font-family:'JetBrains Mono',monospace;padding:2px 7px;background:rgba(255,255,255,0.03);border-radius:5px;display:inline-block;margin:2px 0}
+.detail .meta .ally-tag{font-size:12px;padding:2px 9px;border-radius:9px;font-weight:500;margin:2px}
+
+/* DOCUMENTS */
+.docs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;padding:20px 0}
+.doc-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;transition:all 0.2s}
+.doc-card:hover{border-color:rgba(92,124,250,0.3)}
+.doc-card h3{font-size:15px;font-weight:600;color:#e8ecf2;margin-bottom:6px}
+.doc-card .info{font-size:12px;color:var(--text2);margin-bottom:12px}
+.doc-card .btns{display:flex;gap:8px;flex-wrap:wrap}
+.btn{padding:7px 14px;border-radius:8px;font-size:12px;font-weight:600;border:1px solid;cursor:pointer;font-family:inherit;transition:all 0.2s}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}.btn-primary:hover{opacity:0.85}
+.btn-outline{background:transparent;border-color:var(--border);color:var(--text2)}.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+
+/* BUDGET */
+.budget-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0}
+.budget-table th{background:#1F3864;color:#fff;padding:10px 12px;text-align:left;font-weight:600;font-size:12px}
+.budget-table td{padding:8px 12px;border-bottom:1px solid var(--border)}
+.budget-table tr:nth-child(even){background:rgba(255,255,255,0.02)}
+.budget-table .total{background:rgba(92,124,250,0.08);font-weight:700}
+.budget-table .indent{padding-left:28px;color:var(--text2);font-size:12px}
+
+/* VERSIONING */
+.version-panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;margin:20px 0}
+.version-panel h3{font-size:18px;font-weight:600;color:#e8ecf2;margin-bottom:12px}
+.version-list{list-style:none}
+.version-list li{padding:12px 16px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.version-list li:last-child{border-bottom:none}
+.version-tag{font-size:11px;padding:3px 10px;border-radius:12px;font-weight:600}
+.vt-original{background:rgba(102,187,106,0.12);color:var(--green)}
+.vt-public{background:rgba(92,124,250,0.12);color:var(--accent)}
+.vt-parl{background:rgba(171,71,188,0.12);color:var(--purple)}
+
+/* COMMENT FORM */
+.comment-form{margin-top:20px;padding:20px;background:rgba(255,255,255,0.015);border:1px solid var(--border);border-radius:12px}
+.comment-form h4{font-size:14px;font-weight:600;color:#e8ecf2;margin-bottom:12px}
+.comment-form textarea{width:100%;min-height:100px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px;color:var(--text);font-family:inherit;font-size:14px;resize:vertical;outline:none}
+.comment-form textarea:focus{border-color:rgba(92,124,250,0.4)}
+.comment-form select,.comment-form input{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:8px 12px;color:var(--text);font-family:inherit;font-size:13px;outline:none;margin:8px 4px 8px 0}
+.comment-form .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}
+
+/* HOSTING INFO */
+.hosting-info{background:rgba(92,124,250,0.05);border:1px solid rgba(92,124,250,0.15);border-radius:12px;padding:20px;margin:20px 0}
+.hosting-info h3{color:var(--accent);font-size:16px;margin-bottom:10px}
+.hosting-info code{background:rgba(0,0,0,0.3);padding:2px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px}
+.hosting-info pre{background:rgba(0,0,0,0.3);padding:12px;border-radius:8px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:12px;color:#a0b0c0;margin:8px 0}
+
+.footer{padding:24px 0;border-top:1px solid var(--border);margin-top:40px;text-align:center;color:var(--text3);font-size:12px}
+@media(max-width:600px){.cards{grid-template-columns:1fr}.hero h1{font-size:24px}.tabs{overflow-x:auto}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+<div class="container">
+  <div style="display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap">
+    <div style="width:50px;height:50px;border-radius:14px;background:linear-gradient(135deg,#5C7CFA,#AB47BC);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0">⚖️</div>
+    <div>
+      <h1>Harta Reformelor Legislative — România</h1>
+      <p>25 propuneri concrete de reformă legislativă • Scrutin public deschis • 21 documente descărcabile (10 legi + 10 norme + analiză bugetară)</p>
+    </div>
+  </div>
+  <div class="hero-meta">
+    <div class="badge"><div class="n" style="color:#5C7CFA">25</div><div class="l">Propuneri</div></div>
+    <div class="badge"><div class="n" style="color:#EF5350">6</div><div class="l">Critice</div></div>
+    <div class="badge"><div class="n" style="color:#AB47BC">12</div><div class="l">Diaspora</div></div>
+    <div class="badge"><div class="n" style="color:#66BB6A">21</div><div class="l">Documente</div></div>
+    <div class="badge"><div class="n" style="color:#FFA726">~112 mld</div><div class="l">Buget 5 ani (lei)</div></div>
+    <div class="badge"><div class="n" style="color:#26A69A">~370</div><div class="l">Articole de lege</div></div>
+  </div>
+</div>
+</div>
+
+<div class="container">
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('reforme')">🗂️ Reforme</div>
+  <div class="tab" onclick="switchTab('documente')">📄 Documente</div>
+  <div class="tab" onclick="switchTab('buget')">💰 Buget 5 ani</div>
+  <div class="tab" onclick="switchTab('versiuni')">🔄 Versiuni & Comentarii</div>
+</div>
+
+<!-- TAB: REFORME -->
+<div class="tab-content active" id="tab-reforme">
+  <div class="nav" style="position:relative;border:none;padding:16px 0">
+    <div class="search-wrap"><input type="text" class="search-box" id="searchBox" placeholder="Caută o reformă..." oninput="filterCards()"></div>
+    <div class="nav-inner" id="filterPills"></div>
+  </div>
+  <div class="cards" id="cardsContainer"></div>
+  <div id="detailPanel"></div>
+</div>
+
+<!-- TAB: DOCUMENTE -->
+<div class="tab-content" id="tab-documente">
+  <h2 style="margin:24px 0 8px;font-size:20px;color:#f2f4f7">📄 Documente legislative descărcabile</h2>
+  <p style="color:var(--text2);margin-bottom:16px;font-size:14px">21 documente: 10 legi + 10 norme metodologice + 1 analiză bugetară pe 5 ani. Toate în format Word (.docx), corecte gramatical, gata de trimis parlamentarilor și asociațiilor.</p>
+  <div class="docs-grid" id="docsGrid"></div>
+</div>
+
+<!-- TAB: BUGET -->
+<div class="tab-content" id="tab-buget">
+  <h2 style="margin:24px 0 16px;font-size:20px;color:#f2f4f7">💰 Analiza bugetară pe 5 ani (2027-2031)</h2>
+  <p style="color:var(--text2);margin-bottom:20px;font-size:14px">Sume în milioane lei (RON), prețuri constante 2026. Peste 90% din buget provine din redistribuirea veniturilor existente, nu din cheltuieli noi.</p>
+  
+  <h3 style="font-size:16px;color:var(--accent);margin:20px 0 10px">Bugetul pe lege</h3>
+  <div style="overflow-x:auto">
+  <table class="budget-table">
+    <thead><tr><th>Lege</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th><th>2031</th><th>Total 5 ani</th><th>Sursă</th></tr></thead>
+    <tbody>
+      <tr><td><strong>1. Fondul Rutier Național</strong></td><td>17.600</td><td>18.200</td><td>18.800</td><td>19.400</td><td>20.000</td><td><strong>94.000</strong></td><td>80% accize combustibil</td></tr>
+      <tr><td><strong>2. Digitalizare</strong></td><td>450</td><td>600</td><td>500</td><td>400</td><td>300</td><td><strong>2.250</strong></td><td>UE + buget ADR</td></tr>
+      <tr><td><strong>3. Avocatul Contribuabilului</strong></td><td>30</td><td>60</td><td>65</td><td>70</td><td>70</td><td><strong>295</strong></td><td>Buget Parlament</td></tr>
+      <tr><td><strong>4. Transparență Publică</strong></td><td>80</td><td>120</td><td>90</td><td>70</td><td>60</td><td><strong>420</strong></td><td>ADR/ANAP/MF + UE</td></tr>
+      <tr><td><strong>5. Siguranță Rutieră</strong></td><td>800</td><td>1.200</td><td>1.400</td><td>1.500</td><td>1.500</td><td><strong>6.400</strong></td><td>FSR (50% amenzi) + MAI</td></tr>
+      <tr><td><strong>6. Transport Public</strong></td><td>120</td><td>250</td><td>300</td><td>350</td><td>350</td><td><strong>1.370</strong></td><td>FRN + bugete județene</td></tr>
+      <tr><td><strong>7. Urbanism Digital</strong></td><td>60</td><td>120</td><td>100</td><td>80</td><td>60</td><td><strong>420</strong></td><td>PNRR + MDLPA</td></tr>
+      <tr><td><strong>8. Dezvoltare Rurală</strong></td><td>600</td><td>900</td><td>950</td><td>800</td><td>700</td><td><strong>3.950</strong></td><td>FRN + FCR + FVC + UE</td></tr>
+      <tr><td><strong>9. Impozit Valoare Teren</strong></td><td>30</td><td>50</td><td>40</td><td>20</td><td>15</td><td><strong>155</strong></td><td>ANCPI + Banca Mondială</td></tr>
+      <tr><td><strong>10. Reforma Cadastru</strong></td><td>600</td><td>700</td><td>600</td><td>400</td><td>200</td><td><strong>2.500</strong></td><td>ANCPI + UE + penalități</td></tr>
+      <tr class="total"><td><strong>TOTAL</strong></td><td><strong>20.370</strong></td><td><strong>22.200</strong></td><td><strong>22.845</strong></td><td><strong>23.090</strong></td><td><strong>23.255</strong></td><td><strong>~111.760</strong></td><td></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3 style="font-size:16px;color:var(--green);margin:28px 0 10px">Buget suplimentar NET de la bugetul de stat (bani noi)</h3>
+  <div style="background:rgba(102,187,106,0.06);border:1px solid rgba(102,187,106,0.15);border-radius:12px;padding:16px;margin-bottom:20px">
+    <p style="font-size:14px;color:var(--text)"><strong>~3,9 miliarde lei pe 5 ani</strong> = ~780 milioane lei/an = <strong>sub 0,05% din PIB</strong></p>
+    <p style="font-size:13px;color:var(--text2);margin-top:6px">Restul de ~108 miliarde lei provine din redistribuirea veniturilor existente (accize, amenzi, taxe spectru, ETS) + fonduri UE. Nu sunt bani noi — sunt bani care se colectează deja dar azi merg în bugetul general fără destinație.</p>
+  </div>
+  
+  <h3 style="font-size:16px;color:var(--orange);margin:28px 0 10px">Economii estimate generate de reforme</h3>
+  <div style="background:rgba(255,167,38,0.06);border:1px solid rgba(255,167,38,0.15);border-radius:12px;padding:16px">
+    <p style="font-size:14px;color:var(--text)"><strong>28-50 miliarde lei pe 5 ani</strong> (estimare conservatoare - optimistă)</p>
+    <p style="font-size:13px;color:var(--text2);margin-top:6px">Din: eliminare hârtie, productivitate cetățeni, venituri impozit teren corect, reducere mortalitate rutieră, reducere corupție achiziții, economii energetice, valoare date deschise, piață imobiliară funcțională din cadastru complet.</p>
+    <p style="font-size:13px;color:var(--orange);margin-top:8px;font-weight:600">Raport cost/beneficiu: 1 leu investit → 3-5 lei returnat</p>
+  </div>
+</div>
+
+<!-- TAB: VERSIUNI -->
+<div class="tab-content" id="tab-versiuni">
+  <h2 style="margin:24px 0 8px;font-size:20px;color:#f2f4f7">🔄 Versiuni și scrutin public</h2>
+  <p style="color:var(--text2);margin-bottom:16px;font-size:14px">Fiecare lege poate avea mai multe versiuni: varianta originală (v1.0), variante modificate de public, și variante parlamentare. Toate sunt păstrate și comparabile.</p>
+  
+  <div class="version-panel">
+    <h3>Versiuni disponibile</h3>
+    <ul class="version-list" id="versionList"></ul>
+  </div>
+
+  <div class="comment-form">
+    <h4>💬 Trimite propunere de modificare</h4>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:12px">Selectează legea, descrie modificarea propusă, și opțional încarcă o versiune alternativă a documentului.</p>
+    <select id="commentLaw" style="min-width:200px">
+      <option value="">Selectează legea...</option>
+    </select>
+    <textarea id="commentText" placeholder="Descrie modificarea propusă, articolul vizat, și motivarea..."></textarea>
+    <div class="row">
+      <input type="text" id="commentName" placeholder="Numele tău (opțional)" style="flex:1;min-width:150px">
+      <input type="text" id="commentOrg" placeholder="Organizație (opțional)" style="flex:1;min-width:150px">
+      <label class="btn btn-outline" style="cursor:pointer">
+        📎 Încarcă document alternativ
+        <input type="file" accept=".docx,.pdf" style="display:none" id="commentFile">
+      </label>
+      <button class="btn btn-primary" onclick="submitComment()">Trimite propunere</button>
+    </div>
+    <div id="commentStatus" style="margin-top:10px;font-size:13px"></div>
+  </div>
+</div>
+
+<!-- TAB: HOSTING -->
+</div>
+
+<div class="footer">
+  <div class="container">
+    <p>Document de politici publice — Aprilie 2026 — Nu constituie consultanță juridică</p>
+    <p style="margin-top:4px">Contact: <a href="mailto:florindumitruconstanta@gmail.com">florindumitruconstanta@gmail.com</a></p>
+    <p style="margin-top:4px">Toate documentele sunt disponibile sub licență Creative Commons BY 4.0</p>
+    <p style="margin-top:4px;font-size:11px;color:#334155">Art. 74 alin. (1) din Constituția României garantează dreptul la inițiativă legislativă cetățenească</p>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// DATA
+// ============================================================
+const CATEGORIES=[
+  {id:"digital",label:"Digitalizare",icon:"📡",color:"#5C7CFA"},
+  {id:"cetatean",label:"Cetățean ↔ Stat",icon:"🤝",color:"#AB47BC"},
+  {id:"date",label:"Acces Date Publice",icon:"📂",color:"#26A69A"},
+  {id:"trafic",label:"Trafic & Supraveghere",icon:"📹",color:"#EF5350"},
+  {id:"transport",label:"Transport & Drumuri",icon:"🛣️",color:"#E8553D"},
+  {id:"urbanism",label:"Urbanism & Construcții",icon:"🏗️",color:"#D4A03C"},
+  {id:"fiscal",label:"Fiscalitate & Buget",icon:"💰",color:"#4CAF50"},
+  {id:"rural",label:"Dezvoltare Rurală",icon:"🌾",color:"#8D6E63"},
+  {id:"energie",label:"Energie & Mediu",icon:"⚡",color:"#00897B"},
+];
+
+const REFORMS=[
+  {id:101,cat:"digital",priority:"critical",title:"Legea-cadru a digitalizării administrației publice",subtitle:"Toate serviciile publice 100% online până 2029, digital by default",status:"draft",law:"Lege nouă organică (28 art.)",problem:"Ghișeul.ro acoperă sub 15% din servicii. Fiecare primărie face ce vrea.",solution:"Digital by default, principiul 'doar o dată', PNI X-Road, eID, servicii consulare digitale, e-Factura extins.",impact:"Eliminarea ~80% din deplasări la ghișee. 3-5 mld lei/an economii.",affectedLaws:["OUG 41/2016","L.455/2001","OUG 38/2020"],allies:["ADR","Banca Mondială","STS"],docReady:true,diaspora:true},
+  {id:201,cat:"cetatean",priority:"critical",title:"Codul Drepturilor Contribuabilului",subtitle:"Avocatul Contribuabilului, tăcerea administrativă pozitivă, contestație fără plată",status:"draft",law:"Lege nouă organică (31 art.)",problem:"Contribuabilul nu are drepturi explicite. ANAF comunică intimidant. Termenele ignorate fără consecințe.",solution:"8 drepturi fundamentale, Avocatul Contribuabilului independent, aprobare tacită, sancțiuni personale.",impact:"Reechilibrarea relației stat-cetățean. Acces diaspora la apărare fiscală.",affectedLaws:["Cod Procedură Fiscală","L.207/2015","L.554/2004"],allies:["CCF","Avocatul Poporului","CNIPMMR","Baroul"],docReady:true,diaspora:true},
+  {id:301,cat:"date",priority:"critical",title:"Legea Transparenței Publice",subtitle:"Date deschise, registrul contractelor, eliminarea ștampilei, 'Unde merg banii tăi'",status:"draft",law:"Lege nouă (24 art.)",problem:"data.gov.ro neactualizat. Contracte opace. Ștampila încă cerută. Bugetul invizibil.",solution:"12 categorii date deschise obligatorii, RNCP cu toate plățile, portal bugetar cetățenesc, ștampilă eliminată definitiv.",impact:"Ecosistem civic. Reducere corupție. 500 mil foi hârtie/an eliminate.",affectedLaws:["L.179/2022","L.98/2016","L.544/2001","HG 1259/2015"],allies:["Funky Citizens","Code4RO","Expert Forum","ANAP"],docReady:true,diaspora:true},
+  {id:401,cat:"trafic",priority:"critical",title:"Legea Siguranței Rutiere",subtitle:"Camere SNSVR, parcare pe trotuar, Fond Siguranță Rutieră, e-Contestație",status:"draft",law:"Lege nouă (18 art.)",problem:"85 morți/milion pe șosele. Parcare pe trotuar endemică. Amenzi fără legătură cu prevenția.",solution:"SNSVR cu sancționare automată, camere parcare cu amenzi escaladante, FSR din 50% amenzi, platformă contestare online.",impact:"Reducere 30-40% mortalitate în 5 ani. Eliberarea trotuarelor. 1-2 mld lei/an pentru siguranță.",affectedLaws:["OUG 195/2002","OG 2/2001","L.190/2018 GDPR"],allies:["MAI","ProInfrastructura","CNAIR","asigurători"],docReady:true,diaspora:true},
+  {id:501,cat:"transport",priority:"critical",title:"Fondul Rutier Național (FRN)",subtitle:"Earmarking 80% din accize → drumuri + transport public",status:"draft",law:"Lege + Norme (17+22 art.)",problem:"~22 mld lei/an din accize fără destinație. Transport interurban inexistent în rural.",solution:"Fond dedicat 80% accize, consiliu mixt, portal transparență, subvenții rute esențiale.",impact:"17-19 mld lei/an pentru drumuri și transport public.",affectedLaws:["Codul Fiscal art.355","L.500/2002"],allies:["UNTRR","ARTRI","ProInfrastructura","ACoR"],docReady:true,diaspora:false},
+  {id:502,cat:"transport",priority:"critical",title:"Reforma Transportului Public Interurban",subtitle:"PSO, licențiere transparentă, registru rute, bilet unic",status:"draft",law:"Lege nouă (24 art.)",problem:"Licențe netransparente. Rute abandonate. 2.000+ localități fără transport.",solution:"PSO pe model UE, licitații publice obligatorii, registru e-Transport, indicatori performanță, bilet unic digital.",impact:"Acoperire garantată localități >500 locuitori. Eliminare zone albe.",affectedLaws:["L.92/2007","OG 27/2011","Reg. CE 1370/2007"],allies:["UNTRR","ACoR","consilii județene","ARR"],docReady:true,diaspora:false},
+  {id:601,cat:"urbanism",priority:"high",title:"Legea Urbanismului Digital",subtitle:"Ghișeu unic e-AC, registrul GIS PUZ-urilor, aprobare tacită avize",status:"draft",law:"Lege nouă (19 art.)",problem:"AC durează 6-18 luni. Avize secvențiale. PUZ-uri doar pe hârtie la primării.",solution:"Platformă e-AC cu avize simultane, termen 60 zile total, aprobare tacită, registrul GIS e-Urbanism, procedură simplificată case mici.",impact:"De la 6-18 luni la 60 zile. Transparență urbanistică totală.",affectedLaws:["L.50/1991","L.350/2001","HG 907/2016"],allies:["Ordinul Arhitecților","MDLPA","ADR"],docReady:true,diaspora:true},
+  {id:701,cat:"fiscal",priority:"high",title:"Impozitul pe Valoarea Terenului",subtitle:"Model CAMA, se impozitează terenul nu construcția, anti-speculă",status:"draft",law:"Lege nouă (25 art.)",problem:"Grile depășite. Prețul tranzacție manipulabil. Costul construcție penalizează investiția.",solution:"CAMA cu 5 factori obiectivi, construcția NU se impozitează, scutire locuință principală, coeficient majorat terenuri speculative, tranziție 3 ani.",impact:"Venituri echitabile pentru primării. Descurajare speculă. Stimulare construcție.",affectedLaws:["Codul Fiscal Titlul IX","L.7/1996"],allies:["ANCPI","AMR","Banca Mondială"],docReady:true,diaspora:false},
+  {id:801,cat:"rural",priority:"high",title:"Legea Dezvoltării Rurale Integrate",subtitle:"Drumuri comunale, broadband, prosumatori, fond verde comunal",status:"draft",law:"Lege nouă (21 art.)",problem:"30.000+ km drumuri nepavate. Mii de sate fără internet. Prosumatori blocați de birocrație.",solution:"Sub-fond FRN pe formulă obiectivă, broadband obligatoriu 2028, racordare prosumator 30 zile zero taxe, fond verde pentru școli/primării.",impact:"3.000 km/an asfaltat. Broadband >200 loc. 500.000 prosumatori. -50% consum energetic clădiri publice.",affectedLaws:["Legea FRN","L.159/2016","L.184/2018","L.372/2005"],allies:["ACoR","ANCOM","ANRE","AFM"],docReady:true,diaspora:false},
+  {id:901,cat:"fiscal",priority:"high",title:"Reforma Cadastrului Național",subtitle:"Termene imperative, penalități automate, intabulare simplificată, transparență",status:"draft",law:"Lege nouă (21 art.)",problem:"PNCCF sub 50% acoperire. Contracte blocate ani de zile. Intabulare complicată.",solution:"Termen 2028, penalități 0,1%/zi automate, reziliere la 180 zile, intabulare cu 2 documente, echipe mobile, comisii conciliere, acces diaspora.",impact:"Cadastru complet = credit ipotecar rural, piață funcțională, baza pentru impozit CAMA.",affectedLaws:["L.7/1996","OUG 35/2016"],allies:["ANCPI","OCPI-uri","notari","ACoR"],docReady:true,diaspora:true},
+];
+
+const DOCUMENTS=[
+  {title:"Proiect Lege Fond Rutier Național",file:"Proiect_Lege_FRN.docx",type:"Lege",arts:17,pars:162},
+  {title:"Norme Metodologice FRN",file:"Norme_Metodologice_FRN.docx",type:"Norme",arts:22,pars:288},
+  {title:"Legea Digitalizării României",file:"Lege_Digitalizare.docx",type:"Lege",arts:28,pars:308},
+  {title:"Norme Metodologice Digitalizare",file:"Norme_Digitalizare.docx",type:"Norme",arts:14,pars:55},
+  {title:"Codul Drepturilor Contribuabilului",file:"Lege_Codul_Contribuabilului.docx",type:"Lege",arts:31,pars:303},
+  {title:"Norme Metodologice Contribuabil",file:"Norme_Contribuabil.docx",type:"Norme",arts:15,pars:49},
+  {title:"Legea Transparenței Publice",file:"Lege_Transparenta.docx",type:"Lege",arts:24,pars:331},
+  {title:"Norme Metodologice Transparență",file:"Norme_Transparenta.docx",type:"Norme",arts:11,pars:44},
+  {title:"Legea Siguranței Rutiere",file:"Lege_Siguranta_Rutiera.docx",type:"Lege",arts:18,pars:247},
+  {title:"Norme Metodologice Siguranță Rutieră",file:"Norme_Siguranta_Rutiera.docx",type:"Norme",arts:9,pars:40},
+  {title:"Legea Transportului Public Interurban",file:"Lege_Transport_Public.docx",type:"Lege",arts:24,pars:242},
+  {title:"Norme Metodologice Transport Public",file:"Norme_Transport.docx",type:"Norme",arts:8,pars:38},
+  {title:"Legea Urbanismului Digital",file:"Lege_Urbanism_Digital.docx",type:"Lege",arts:19,pars:239},
+  {title:"Norme Metodologice Urbanism",file:"Norme_Urbanism.docx",type:"Norme",arts:9,pars:40},
+  {title:"Legea Dezvoltării Rurale Integrate",file:"Lege_Dezvoltare_Rurala.docx",type:"Lege",arts:21,pars:200},
+  {title:"Norme Metodologice Dezvoltare Rurală",file:"Norme_Rural.docx",type:"Norme",arts:8,pars:35},
+  {title:"Legea Impozitului pe Valoarea Terenului",file:"Lege_Impozit_Teren.docx",type:"Lege",arts:25,pars:275},
+  {title:"Norme Metodologice Impozit Teren",file:"Norme_Impozit_Teren.docx",type:"Norme",arts:11,pars:40},
+  {title:"Legea Reformei Cadastrului",file:"Lege_Cadastru.docx",type:"Lege",arts:21,pars:234},
+  {title:"Norme Metodologice Cadastru",file:"Norme_Cadastru.docx",type:"Norme",arts:13,pars:47},
+  {title:"Analiza Bugetară pe 5 ani (2027-2031)",file:"Analiza_Bugetara_5ani.docx",type:"Analiză",arts:"-",pars:732},
+];
+
+const PRIORITY={critical:{label:"Critic",color:"#EF5350",bg:"rgba(239,83,80,0.12)"},high:{label:"Ridicat",color:"#FFA726",bg:"rgba(255,167,38,0.12)"},medium:{label:"Mediu",color:"#5C7CFA",bg:"rgba(92,124,250,0.10)"}};
+
+// ============================================================
+// RENDER
+// ============================================================
+let activeCat=null,activeDiaspora=false,selectedReform=null;
+
+function getCat(id){return CATEGORIES.find(c=>c.id===id)}
+
+function renderPills(){
+  const el=document.getElementById('filterPills');
+  let h=`<button class="pill ${!activeCat&&!activeDiaspora?'active':''}" onclick="setCat(null)">Toate</button>`;
+  CATEGORIES.forEach(c=>{h+=`<button class="pill ${activeCat===c.id?'active':''}" onclick="setCat('${c.id}')">${c.icon} ${c.label}</button>`});
+  h+=`<span style="width:1px;height:20px;background:var(--border);margin:0 4px"></span>`;
+  h+=`<button class="pill ${activeDiaspora?'active-purple':''}" onclick="toggleDiaspora()">🌍 Diaspora</button>`;
+  el.innerHTML=h;
+}
+
+function setCat(id){activeCat=activeCat===id?null:id;renderPills();filterCards()}
+function toggleDiaspora(){activeDiaspora=!activeDiaspora;renderPills();filterCards()}
+
+function filterCards(){
+  const q=document.getElementById('searchBox').value.toLowerCase();
+  const filtered=REFORMS.filter(r=>{
+    if(activeCat&&r.cat!==activeCat)return false;
+    if(activeDiaspora&&!r.diaspora)return false;
+    if(q&&!(r.title+r.subtitle+r.problem).toLowerCase().includes(q))return false;
+    return true;
+  });
+  renderCards(filtered);
+}
+
+function renderCards(list){
+  const el=document.getElementById('cardsContainer');
+  if(!list.length){el.innerHTML='<p style="text-align:center;padding:40px;color:var(--text3)">Nicio reformă nu corespunde filtrelor.</p>';return}
+  el.innerHTML=list.map(r=>{
+    const c=getCat(r.cat),p=PRIORITY[r.priority];
+    return `<div class="card" onclick="showDetail(${r.id})">
+      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap" class="card-cat">
+        <span style="color:${c.color}">${c.icon} ${c.label}</span>
+        <span style="margin-left:auto;display:flex;gap:5px">
+          ${r.diaspora?'<span class="badge-sm" style="background:rgba(171,71,188,0.12);color:#AB47BC">🌍</span>':''}
+          <span class="badge-sm" style="background:${p.bg};color:${p.color}">${p.label}</span>
+          <span class="badge-sm" style="background:rgba(102,187,106,0.12);color:#66BB6A">✅</span>
+        </span>
+      </div>
+      <h3>${r.title}</h3>
+      <div class="sub">${r.subtitle}</div>
+      <div class="tags">${r.allies.slice(0,3).map(a=>`<span class="tag">${a}</span>`).join('')}${r.allies.length>3?`<span class="tag" style="color:var(--text3)">+${r.allies.length-3}</span>`:''}</div>
+    </div>`;
+  }).join('');
+}
+
+function showDetail(id){
+  const r=REFORMS.find(x=>x.id===id);if(!r)return;
+  selectedReform=r;const c=getCat(r.cat);
+  document.getElementById('detailPanel').innerHTML=`
+    <div class="detail">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px">
+        <div>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+            <span style="font-size:12px;color:${c.color};font-weight:600">${c.icon} ${c.label}</span>
+            ${r.diaspora?'<span class="badge-sm" style="background:rgba(171,71,188,0.12);color:#AB47BC">🌍 Diaspora</span>':''}
+            <span class="badge-sm" style="background:rgba(102,187,106,0.12);color:#66BB6A">✅ Draft complet</span>
+          </div>
+          <h2>${r.title}</h2>
+          <p style="font-size:14px;color:var(--text2)">${r.subtitle}</p>
+          <p style="font-size:13px;color:var(--text3);margin-top:4px">${r.law}</p>
+        </div>
+        <button class="btn btn-outline" onclick="document.getElementById('detailPanel').innerHTML=''">✕ Închide</button>
+      </div>
+      <div class="boxes">
+        <div class="box" style="background:rgba(239,83,80,0.06);border-left-color:#EF5350"><h4 style="color:#EF5350">🔴 Problema</h4><p>${r.problem}</p></div>
+        <div class="box" style="background:rgba(102,187,106,0.06);border-left-color:#66BB6A"><h4 style="color:#66BB6A">🟢 Soluția</h4><p>${r.solution}</p></div>
+        <div class="box" style="background:rgba(92,124,250,0.06);border-left-color:#5C7CFA"><h4 style="color:#5C7CFA">🔵 Impact</h4><p>${r.impact}</p></div>
+      </div>
+      <div class="meta">
+        <div><h4>Legi afectate</h4>${r.affectedLaws.map(l=>`<span class="law-tag">${l}</span>`).join('<br>')}</div>
+        <div><h4>Aliați potențiali</h4><div style="display:flex;gap:5px;flex-wrap:wrap">${r.allies.map(a=>`<span class="ally-tag" style="background:${c.color}15;color:${c.color}">${a}</span>`).join('')}</div></div>
+      </div>
+    </div>`;
+  document.getElementById('detailPanel').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function renderDocs(){
+  document.getElementById('docsGrid').innerHTML=DOCUMENTS.map(d=>`
+    <div class="doc-card">
+      <h3>${d.title}</h3>
+      <div class="info">${d.type} • ${d.arts} articole • ${d.pars} paragrafe</div>
+      <div class="btns">
+        <a class="btn btn-primary" href="docs/v1.0/${d.file}" download>⬇ Descarcă .docx</a>
+        <button class="btn btn-outline" onclick="alert('Documentele PDF se generează la găzduire. Descarcă .docx și convertește cu LibreOffice sau Word.')">📋 PDF</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderVersions(){
+  const laws=DOCUMENTS.filter(d=>d.type==='Lege'||d.type==='Norme');
+  document.getElementById('versionList').innerHTML=laws.map(d=>`
+    <li>
+      <div>
+        <strong style="color:#e8ecf2;font-size:14px">${d.title}</strong>
+        <div style="font-size:12px;color:var(--text2)">${d.arts} articole • ${d.pars} paragrafe</div>
+      </div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <span class="version-tag vt-original">v1.0 Original</span>
+        <a class="btn btn-outline" href="docs/v1.0/${d.file}" download style="font-size:11px;padding:4px 10px">⬇ Descarcă</a>
+      </div>
+    </li>
+  `).join('');
+
+  // Populate comment form dropdown
+  const sel=document.getElementById('commentLaw');
+  sel.innerHTML='<option value="">Selectează legea...</option>'+laws.map(d=>`<option value="${d.file}">${d.title}</option>`).join('');
+}
+
+function submitComment(){
+  const law=document.getElementById('commentLaw').value;
+  const text=document.getElementById('commentText').value;
+  const name=document.getElementById('commentName').value;
+  const org=document.getElementById('commentOrg').value;
+  const st=document.getElementById('commentStatus');
+  
+  if(!law||!text){st.innerHTML='<span style="color:var(--red)">Selectează legea și completează propunerea.</span>';return}
+  
+  // In a real deployment, this would POST to a backend (Google Forms, Supabase, Firebase)
+  const data={law,text,name:name||'Anonim',org:org||'-',date:new Date().toISOString()};
+  console.log('Propunere trimisă:',data);
+  
+  // Store locally for demo
+  const stored=JSON.parse(localStorage.getItem('propuneri')||'[]');
+  stored.push(data);
+  localStorage.setItem('propuneri',JSON.stringify(stored));
+  
+  st.innerHTML='<span style="color:var(--green)">✅ Propunere înregistrată! În versiunea găzduită online, aceasta va fi trimisă pentru analiză.</span>';
+  document.getElementById('commentText').value='';
+}
+
+function switchTab(id){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelector(`.tab-content#tab-${id}`).classList.add('active');
+  document.querySelector(`.tab[onclick="switchTab('${id}')"]`).classList.add('active');
+}
+
+// INIT
+renderPills();
+filterCards();
+renderDocs();
+renderVersions();
+</script>
+</body>
+</html>
