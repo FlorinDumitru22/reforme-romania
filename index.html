@@ -386,7 +386,7 @@ function renderDocs(){
       <div class="info">${d.type} • ${d.arts} articole • ${d.pars} paragrafe</div>
       <div class="btns">
         <a class="btn btn-primary" href="docs/v1.0/${d.file}" download>⬇ Descarcă .docx</a>
-        <button class="btn btn-outline" onclick="alert('Documentele PDF se generează la găzduire. Descarcă .docx și convertește cu LibreOffice sau Word.')">📋 PDF</button>
+        <a class="btn btn-outline" href="docs/v1.0/${d.file.replace('.docx','.pdf')}" download>📋 PDF</a>
       </div>
     </div>
   `).join('');
